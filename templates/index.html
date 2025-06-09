@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>垃圾分类助手</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>智能垃圾分类助手</h1>
+            <p>上传一张图片，我们的AI模型将识别垃圾类别并显示热力图</p>
+        </header>
+
+        <div class="main-content">
+            <div class="upload-section" style="text-align: center;">
+                <form method="post" enctype="multipart/form-data" id="upload-form">
+                    <div style="text-align:center;">
+                        <label for="file-upload" class="custom-file-upload">
+                            <i class="icon-upload"></i> 点击选择图片
+                        </label>
+                    </div>
+                    <input id="file-upload" name="file" type="file" accept="image/*" onchange="previewImage(event)">
+                    <button type="submit" class="button-predict">开始预测</button>
+                </form>
+                {% if error %}
+                    <p class="error">{{ error }}</p>
+                {% endif %}
+            </div>
+
+            <div class="results-section">
+                <div class="image-preview-container" id="image-preview-container" style="display:none;">
+                    <h3>图片预览</h3>
+                    <img id="image-preview" src="#" alt="Image preview">
+                </div>
+
+                {% if result %}
+                <div class="prediction-result">
+                    <h3>预测结果</h3>
+                    <div class="result-card">
+                        <div class="heatmap-tip">该垃圾的CAM热力图</div>
+                         <img src="{{ url_for('static', filename=result.image_filename) }}" alt="Result image with Grad-CAM">
+                        
+                        <div class="result-text">
+                            <p><strong>类别:</strong> <span class="class-name">{{ result.class_name_cn }}</span></p>
+                            <p><strong>置信度:</strong> {{ result.confidence }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <footer>
+            <p>技术支持：基于 PyTorch, Flask & Grad-CAM</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> 

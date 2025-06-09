@@ -1,0 +1,180 @@
+/* General Body Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container for the whole app */
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Header Styles */
+header h1 {
+    color: #2c3e50;
+    font-weight: 700;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #7f8c8d;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+/* Main Content Layout */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Upload Section Styles */
+.upload-section {
+    padding: 30px;
+    border: 2px dashed #bdc3c7;
+    border-radius: 8px;
+    background-color: #ecf0f1;
+}
+
+#upload-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+input[type="file"] {
+    display: none; /* Hide the default file input */
+}
+
+.custom-file-upload {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+    min-width: 160px;
+    min-height: 44px;
+}
+
+.custom-file-upload:hover {
+    background-color: #2980b9;
+}
+
+.button-predict {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.button-predict:hover {
+    background-color: #27ae60;
+}
+
+.error {
+    color: #e74c3c;
+    margin-top: 15px;
+}
+
+/* Results Section Styles */
+.results-section h3 {
+    color: #2c3e50;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.image-preview-container, .prediction-result {
+    margin-top: 20px;
+}
+
+#image-preview, .result-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.result-card {
+    background-color: #f8f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.result-text {
+    font-size: 1.2em;
+    margin-top: 15px;
+}
+
+.result-text p {
+    margin: 8px 0;
+}
+
+.result-text .class-name {
+    font-weight: 700;
+    color: #3498db;
+    background-color: #eaf5ff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Footer Styles */
+footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ecf0f1;
+    color: #95a5a6;
+    font-size: 0.9em;
+}
+
+/* Icon (optional, requires an icon font or SVG) */
+.icon-upload {
+    /* Basic placeholder for an icon */
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    /* background: url('path-to-your-icon.svg') no-repeat center center; */
+    /* background-size: contain; */
+}
+
+.heatmap-tip {
+    color: #e67e22;
+    font-size: 1em;
+    margin: 10px 0 0 0;
+    font-weight: 500;
+    letter-spacing: 1px;
+} 

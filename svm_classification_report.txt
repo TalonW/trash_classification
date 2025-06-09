@@ -1,0 +1,12 @@
+SVM Classification Report (on test set, 506 samples):\n\n              precision    recall  f1-score   support
+
+   cardboard       0.77      0.67      0.72        81
+       glass       0.53      0.65      0.58       100
+       metal       0.61      0.54      0.57        82
+       paper       0.72      0.83      0.77       119
+     plastic       0.56      0.55      0.55        97
+       trash       1.00      0.33      0.50        27
+
+    accuracy                           0.64       506
+   macro avg       0.70      0.59      0.62       506
+weighted avg       0.66      0.64      0.64       506
